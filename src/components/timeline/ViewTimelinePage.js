@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import MemoryList from '../memory/MemoryList';
+import MemoryListFilters from '../memory/MemoryListFilters';
 import Navbar from '../Navbar/Navbar';
 
 const ViewTimelinePage = (props) => {
@@ -14,6 +15,7 @@ const ViewTimelinePage = (props) => {
       <h1>{props.location.title}</h1>
       <h2>{props.location.description}</h2>
       <MemoryList userID={props.auth.uid} timelineID={props.location.id}/>
+      <MemoryListFilters />
       <Link to={{
         pathname: "/add_memory",
         id: props.location.id

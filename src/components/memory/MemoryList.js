@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { firestoreConnect } from 'react-redux-firebase';
 import getVisibleMemories from '../../selectors/getVisibleMemories';
 import Memory from './Memory';
-import { firestoreConnect } from 'react-redux-firebase';
 
 const MemoryList = (props) => (
   <div>
@@ -21,12 +21,8 @@ const MemoryList = (props) => (
 );
 
 const mapStateToProps = state => ({
-  memories: state.firestore.ordered.memories
+  memories: state.firestore.ordered.memories && getVisibleMemories(state.firestore.ordered.memories, state.memoryFilters),
 });
-
-// const mapStateToProps = state => ({
-//   memories: getVisibleMemories(state.memories, state.memoryFilters),
-// });
 
 export default compose(
   connect(mapStateToProps),

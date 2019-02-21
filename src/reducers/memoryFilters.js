@@ -1,8 +1,8 @@
 const memoryFiltersInitialState = {
     text: '',
     sortBy: 'ascending',
-    startDate: undefined,
-    endDate: undefined,
+    startDate: null,
+    endDate: null,
   };
   
 export default (state = memoryFiltersInitialState, action) => {

@@ -46,10 +46,10 @@ class SignIn extends Component {
             value={this.state.password}
           />
           <button>Login</button>
-          <div>
+        </form>
+        <div>
             { authError ? <p>{authError}</p> : null }
           </div>
-        </form>
       </div>
     );
   }
