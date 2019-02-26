@@ -22,17 +22,18 @@ class MemoryListFilters extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="row">
+        <div className="col s6">
           <input
             type="text"
+            placeholder="Search"
             value={this.props.memoryFilters.text}
             onChange={(e) => {
               this.props.dispatch(setMemoryTextFilter(e.target.value));
             }}
           />
         </div>
-        <div>
+        <div className="col s6">
           <DateRangePicker
                 startDate={this.props.memoryFilters.startDate}
                 startDateId="foo"

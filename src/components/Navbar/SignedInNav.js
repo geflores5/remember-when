@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signOut } from '../../actions/auth';
 
 const SignedInNav = (props) => (
-  <div>
+  <div className="right">
     <a onClick={props.signOut}>Log Out</a>
   </div>
 );

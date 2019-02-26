@@ -32,22 +32,27 @@ class TimelineForm extends Component {
     if (!auth.uid) return <Redirect to='/sign_in' />
 
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            autoFocus
-            type="text"
-            placeholder="Title"
-            onChange={this.onTitleChange}
-            value={this.state.title}
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            onChange={this.onDescriptionChange}
-            value={this.state.description}
-          />
-          <button>Save Timeline</button>
+      <div className="container">
+        <form className="grey lighten-2" onSubmit={this.onSubmit}>
+          <div className="input-field">
+            <input
+              autoFocus
+              type="text"
+              placeholder="Title"
+              onChange={this.onTitleChange}
+              value={this.state.title}
+            />
+          </div>
+          
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="Description"
+              onChange={this.onDescriptionChange}
+              value={this.state.description}
+            />
+          </div>
+          <button className="btn blue lighten-1">Save Timeline</button>
         </form>
       </div>
     );

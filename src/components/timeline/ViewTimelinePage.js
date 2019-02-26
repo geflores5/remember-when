@@ -3,26 +3,35 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import MemoryList from '../memory/MemoryList';
 import MemoryListFilters from '../memory/MemoryListFilters';
-import Navbar from '../Navbar/Navbar';
 
 const ViewTimelinePage = (props) => {
   const { auth } = props;
   if (!auth.uid) return <Redirect to='/sign_in' />
 
   return (
-    <div>
-      <Navbar />
-      <h1>{props.location.title}</h1>
-      <h2>{props.location.description}</h2>
-      <MemoryList userID={props.auth.uid} timelineID={props.location.id}/>
+    <div className="container">
+      <div>
+        <h1>
+          {props.location.title}
+          <small> - {props.location.description}</small>
+        </h1>
+      </div>
       <MemoryListFilters />
-      <Link to={{
-        pathname: "/add_memory",
-        id: props.location.id
-      }}>
-        <h3>Add Memory</h3>
-      </Link>
-      <Link to={`/edit_timeline/${props.location.id}`}>Edit Timeline</Link>
+      <div>
+        <h3>
+          Memories
+          <small> 
+            <Link to={{
+              pathname: "/add_memory",
+              id: props.location.id
+            }}> + Add Memory
+            </Link>
+          </small>
+        </h3>
+      </div>
+      <MemoryList userID={props.auth.uid} timelineID={props.location.id}/>
+      
+      <Link to={`/edit_timeline/${props.location.id}`} className="btn blue darken-1">Edit Timeline</Link>
       
     </div>
   )

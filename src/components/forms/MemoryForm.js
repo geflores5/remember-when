@@ -75,15 +75,17 @@ class MemoryForm extends Component {
     if (!auth.uid) return <Redirect to='/sign_in' />
 
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            autoFocus
-            type="text"
-            placeholder="Title"
-            onChange={this.onTitleChange}
-            value={this.state.title}
-          />
+      <div className="container">
+        <form className="grey lighten-2" onSubmit={this.onSubmit}>
+          <div className="input-field">
+            <input
+              autoFocus
+              type="text"
+              placeholder="Title"
+              onChange={this.onTitleChange}
+              value={this.state.title}
+            />
+          </div> 
           <DatePicker
             selected={this.state.date}
             placeholderText="Click to select a date"
@@ -93,27 +95,43 @@ class MemoryForm extends Component {
             dateFormat="MMMM DD, YYYY h:mm AA"
             timeCaption="Time"
           />
-          <input
-            type="text"
-            placeholder="Location"
-            onChange={this.onLocationChange}
-            value={this.state.location}
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            onChange={this.onDescriptionChange}
-            value={this.state.description}
-          />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={this.onMediaChange}
-          />
-          <button>Save Memory</button>
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="Location"
+              onChange={this.onLocationChange}
+              value={this.state.location}
+            />
+          </div>
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="Description"
+              onChange={this.onDescriptionChange}
+              value={this.state.description}
+            />
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Upload Image</span>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={this.onMediaChange}
+              />
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" />
+            </div>
+          </div>
+          <div>
+            <progress value={this.state.progress} max="100"/>
+          </div>
+          <div>
+            <img src={this.state.imageUrl || 'http://via.placeholder.com/400x300'} height="300" width="400"/> 
+          </div>
+          <button className="btn blue lighten-1">Save Memory</button>
         </form>
-        <progress value={this.state.progress} max="100"/>
-        <img src={this.state.imageUrl || 'http://via.placeholder.com/400x300'} height="300" width="400"/>
       </div>
     );
   }

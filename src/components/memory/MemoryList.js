@@ -7,7 +7,6 @@ import Memory from './Memory';
 
 const MemoryList = (props) => (
   <div>
-    <h1>Memories</h1>
     {
       props.memories && props.memories.map((memory) => {
         if (props.userID === memory.userID && props.timelineID === memory.timelineID) {

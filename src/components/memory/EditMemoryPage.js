@@ -2,11 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MemoryForm from '../forms/MemoryForm';
 import { editMemory, removeMemory } from '../../actions/memories';
-import Navbar from '../Navbar/Navbar';
 
 const EditMemoryPage = (props) => (
   <div>
-    <Navbar />
     <MemoryForm
       memory={props.memory}
       onSubmit={memory=> {

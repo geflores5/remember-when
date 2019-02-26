@@ -5,11 +5,9 @@ import { firestoreConnect } from 'react-redux-firebase';
 import TimelineForm from '../forms/TimelineForm';
 import { editTimeline, removeTimeline } from '../../actions/timelines';
 import { removeMemory } from '../../actions/memories';
-import Navbar from '../Navbar/Navbar';
 
 const EditTimelinePage = (props) => (
   <div>
-    <Navbar />
     <TimelineForm
       timeline={props.timeline}
       onSubmit={timeline => {

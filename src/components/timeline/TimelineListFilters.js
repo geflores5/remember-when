@@ -6,6 +6,7 @@ const TimelineListFilters = (props) => (
   <div>
     <input
       type="text"
+      placeholder="Search"
       value={props.timelineFilters.text}
       onChange={(e) => {
         props.dispatch(setTimelineTextFilter(e.target.value));
