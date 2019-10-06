@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../actions/auth';
-import Navbar from '../Navbar/Navbar';
 
 class SignUp extends Component {
   constructor(props) {
@@ -29,8 +28,7 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to='/' />
 
     return (
-      <div>
-        <Navbar />
+      <div className="container">
         <form onSubmit={this.onSubmit}>
           <input
             autoFocus
