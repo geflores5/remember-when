@@ -10,14 +10,14 @@ const ViewTimelinePage = (props) => {
 
   return (
     <div className="container">
-      <div>
+      <div className="row">
         <h1>
           {props.location.title}
           <small> - {props.location.description}</small>
         </h1>
       </div>
       <MemoryListFilters />
-      <div>
+      <div className="row">
         <h3>
           Memories
           <small> 
@@ -27,6 +27,7 @@ const ViewTimelinePage = (props) => {
             }}> + Add Memory
             </Link>
           </small>
+          <div className="divider"></div>
         </h3>
       </div>
       <MemoryList userID={props.auth.uid} timelineID={props.location.id}/>

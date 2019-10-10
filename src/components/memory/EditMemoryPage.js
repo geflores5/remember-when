@@ -4,7 +4,7 @@ import MemoryForm from '../forms/MemoryForm';
 import { editMemory, removeMemory } from '../../actions/memories';
 
 const EditMemoryPage = (props) => (
-  <div>
+  <div className="container">
     <MemoryForm
       memory={props.memory}
       onSubmit={memory=> {

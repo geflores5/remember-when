@@ -10,12 +10,14 @@ const ViewMemoryPage = (props) => {
   return (
     <div className="container">
       <Link to={`/view_timeline/${props.location.timelineID}`}>Go Back</Link>
-      <h1>{props.location.title}</h1>
-      <h2>{moment(props.location.date).toString()}</h2>
-      <h2>{props.location.description}</h2>
-      <h2>{props.location.location}</h2>
+      <h2>{props.location.title}</h2>
       <img src={props.location.imageUrl} height="300" width="400"/>
-      
+      <div className="row">
+        <p className="left">
+          {props.location.location} - {moment(props.location.date).format('MMMM Do YYYY').toString()}
+        </p>
+      </div>
+      <h5>{props.location.description}</h5>
       <Link to={`/edit_memory/${props.location.id}`} className="btn blue darken-1">Edit Memory</Link>
     </div>
   )

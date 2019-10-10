@@ -10,7 +10,12 @@ const MemoryList = (props) => (
     {
       props.memories && props.memories.map((memory) => {
         if (props.userID === memory.userID && props.timelineID === memory.timelineID) {
-          return <Memory key={memory.id} {...memory} />
+          return (
+            <div>
+              <Memory key={memory.id} {...memory} />
+              <div className="divider"></div>
+            </div>
+          )
         } else
           return 
         }

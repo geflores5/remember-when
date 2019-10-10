@@ -5,7 +5,7 @@ import { addTimeline } from '../../actions/timelines';
 
 const AddTimelinePage = (props) => {
   return (
-    <div>
+    <div className="container">
       <TimelineForm
         onSubmit={(timeline) => {
           props.addTimeline(timeline);

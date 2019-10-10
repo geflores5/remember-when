@@ -8,10 +8,16 @@ import Timeline from './Timeline';
 const TimelineList = (props) => (
   <div>
     <h1>Timelines</h1>
+    <div class="divider"></div>
     {
       props.timelines && props.timelines.map(timeline => {
         if (props.auth.uid === timeline.userID) {
-          return <Timeline key={timeline.id} {...timeline} />
+          return (
+            <div>
+              <Timeline key={timeline.id} {...timeline} />
+              <div className="divider"></div>
+            </div>
+          )
         } else
           return 
         }

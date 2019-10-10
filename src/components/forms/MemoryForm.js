@@ -75,7 +75,7 @@ class MemoryForm extends Component {
     if (!auth.uid) return <Redirect to='/sign_in' />
 
     return (
-      <div className="container">
+      <div>
         <form className="grey lighten-2" onSubmit={this.onSubmit}>
           <div className="input-field">
             <input

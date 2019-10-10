@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../actions/auth';
+import { NavLink } from 'react-router-dom';
 
 const SignedInNav = (props) => (
   <div className="right">
-    <a onClick={props.signOut}>Log Out</a>
+    <NavLink to='/sign_in' onClick={props.signOut}>Log Out</NavLink>
   </div>
 );
 

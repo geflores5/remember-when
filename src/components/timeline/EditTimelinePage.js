@@ -7,7 +7,7 @@ import { editTimeline, removeTimeline } from '../../actions/timelines';
 import { removeMemory } from '../../actions/memories';
 
 const EditTimelinePage = (props) => (
-  <div>
+  <div className="container">
     <TimelineForm
       timeline={props.timeline}
       onSubmit={timeline => {

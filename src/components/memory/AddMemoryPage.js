@@ -4,7 +4,7 @@ import MemoryForm from '../forms/MemoryForm';
 import { addMemory } from '../../actions/memories';
 
 const AddMemoryPage = (props) => (
-  <div>
+  <div className="container">
     <MemoryForm
       timelineID={props.location.id}
       onSubmit={(memory) => {
