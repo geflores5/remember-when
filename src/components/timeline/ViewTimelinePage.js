@@ -10,20 +10,23 @@ const ViewTimelinePage = (props) => {
 
   return (
     <div className="container">
-      <h1>{props.location.title}</h1>
-      <p>{props.location.description}</p>
-      <MemoryListFilters />
       <div className="row">
-        <h5 className="col s4">
-          Memories
-        </h5>
-        <h5 className="col s4"> 
-            <Link to={{
-              pathname: "/add_memory",
-              id: props.location.id
-            }}> + Add Memory
-            </Link>
-          </h5>
+        <div className="col s12">
+          <MemoryListFilters />
+        </div>
+      </div>
+      <h1>{props.location.title}</h1>
+      <div className="row">
+        <div className="col s6">
+          <p>{props.location.description}</p>
+        </div>
+        <div className="col s6">
+          <Link to={{
+                pathname: "/add_memory",
+                id: props.location.id
+              }}> + Add Memory
+          </Link>
+        </div>
       </div>
       <div className="divider"></div>
       <MemoryList 
