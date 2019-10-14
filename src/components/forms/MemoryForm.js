@@ -92,7 +92,7 @@ class MemoryForm extends Component {
             onChange={this.handleDatePicked}
             showTimeSelect
             timeIntervals={1}
-            dateFormat="MMMM DD, YYYY h:mm AA"
+            dateFormat="MMMM DD, YYYY h:mm A"
             timeCaption="Time"
           />
           <div className="input-field">

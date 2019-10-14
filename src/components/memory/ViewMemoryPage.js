@@ -9,7 +9,12 @@ const ViewMemoryPage = (props) => {
   
   return (
     <div className="container">
-      <Link to={`/view_timeline/${props.location.timelineID}`}>Go Back</Link>
+      <Link to={{
+      pathname: `/view_timeline/${props.location.timelineID}`,
+      title: props.location.timelineID.title,
+      description: props.location.timelineID.description,
+      id: props.location.timelineID
+    }}>Go Back</Link>
       <h2>{props.location.title}</h2>
       <img src={props.location.imageUrl} height="300" width="400"/>
       <div className="row">

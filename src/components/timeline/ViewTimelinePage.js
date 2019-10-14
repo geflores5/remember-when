@@ -10,27 +10,26 @@ const ViewTimelinePage = (props) => {
 
   return (
     <div className="container">
-      <div className="row">
-        <h1>
-          {props.location.title}
-          <small> - {props.location.description}</small>
-        </h1>
-      </div>
+      <h1>{props.location.title}</h1>
+      <p>{props.location.description}</p>
       <MemoryListFilters />
       <div className="row">
-        <h3>
+        <h5 className="col s4">
           Memories
-          <small> 
+        </h5>
+        <h5 className="col s4"> 
             <Link to={{
               pathname: "/add_memory",
               id: props.location.id
             }}> + Add Memory
             </Link>
-          </small>
-          <div className="divider"></div>
-        </h3>
+          </h5>
       </div>
-      <MemoryList userID={props.auth.uid} timelineID={props.location.id}/>
+      <div className="divider"></div>
+      <MemoryList 
+        userID={props.auth.uid}
+        timelineID={props.location.id}
+      />
       
       <Link to={`/edit_timeline/${props.location.id}`} className="btn blue darken-1">Edit Timeline</Link>
       
